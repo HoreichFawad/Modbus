@@ -1,6 +1,4 @@
-#include "w5500example.hpp"
 #include "w5500_header.hpp"
-#include "testw5500.hpp"
 #include "TCPSocketServer.h"
 #include "TCPSocketConnection.h"
 #include "EthernetInterface.h"
