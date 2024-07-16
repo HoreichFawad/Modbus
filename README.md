@@ -25,8 +25,6 @@ Modbus/
 ```
 
 ### Key Directories and Files
-
-- **examples/**: Contains various example programs demonstrating the usage of the Modbus library.
 - **src/**: Contains the source code for the Modbus library.
 - **include/**: Contains the header files for the Modbus library.
 
