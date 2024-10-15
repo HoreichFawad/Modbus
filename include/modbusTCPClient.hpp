@@ -2,7 +2,8 @@
 #include <stdint.h>
 #include <string>
 #include "mbed.h"
-#include "EthernetInterface.h"
+#include "W5500_EMAC.hpp"
+#include "W5500_TCPClient.h"
 #include <any>
 #include <variant>
 
@@ -40,7 +41,7 @@ class ModbusTCPClient
         int err_no{};
         std::string error_msg;
 
-        ModbusTCPClient(W5500* w5500);
+        ModbusTCPClient(W5500_TCPClient* );
         ~ModbusTCPClient();
 
         void modbusSetSlaveId(int id);
@@ -54,9 +55,9 @@ class ModbusTCPClient
         int modbusWriteRegister(uint16_t address, const uint16_t &value);
         int modbusWriteCoils(uint16_t address, uint16_t amount, const bool *value);
         int modbusWriteRegisters(uint16_t address, uint16_t amount, const uint16_t *value);
-        bool connect();
+        bool connect(const char *host, const int port);
     private:
-        W5500* networkInterface;
+        W5500_TCPClient* networkInterface;
         bool _connected{};
         uint16_t PORT{};
         uint32_t _msg_id{};
@@ -75,5 +76,3 @@ class ModbusTCPClient
         void setBadCon();
         void setBadInput();
     };
-    int modbusExample();
-    uint32_t strToIP_(const char *str);

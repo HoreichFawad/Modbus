@@ -46,8 +46,11 @@ class ModbusRTUSlave {
     uint16_t _crc(uint8_t len);
     uint16_t _div8RndUp(uint16_t value);
     uint16_t _bytesToWord(uint8_t high, uint8_t low);
+    uint8_t highByte(uint16_t x);
+    uint8_t lowByte(uint16_t x);
     void bitSet(uint8_t &value, uint8_t bit);
     void bitClear(uint8_t &value, uint8_t bit);
+    
 };
 
 #endif

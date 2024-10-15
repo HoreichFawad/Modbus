@@ -38,11 +38,11 @@ void ModbusRTUSlave::configureInputRegisters(uint16_t inputRegisters[], uint16_t
 }
 
 
-uint8_t lowByte(uint16_t x) {
+uint8_t ModbusRTUSlave::lowByte(uint16_t x) {
     return (uint8_t)(x & 0xFF);
 }
 
-uint8_t highByte(uint16_t x) {
+uint8_t ModbusRTUSlave::highByte(uint16_t x) {
     return (uint8_t)(x >> 8);
 }
 
